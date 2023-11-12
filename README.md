@@ -43,6 +43,7 @@ Before running this application, make sure you have the following dependencies i
 - Flask
 - PyTorch
 - Transformers (Hugging Face)
+- Pycaret
 - Other necessary libraries (refer to `requirements.txt`)
 
 You can install the required libraries using pip:
