@@ -1,4 +1,4 @@
-# Text Classification with BERT Flask Application
+# VerifAI: Text Classification with BERT Flask Application
 
 This Flask application allows you to perform text classification using a pre-trained BERT model. It can classify text as either "Fake" or "True" based on the content.
 
