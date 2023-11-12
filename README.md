@@ -6,6 +6,7 @@ This Flask application allows you to perform text classification using a pre-tra
 
 - [Overview](#overview)
 - [Purpose](#purpose)
+- [Inspiration](#inspiration)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
 - [Acknowledgments](#acknowledgments)
@@ -14,6 +15,11 @@ This Flask application allows you to perform text classification using a pre-tra
 ## Overview
 
 This Flask application enables text classification using a pre-trained BERT model. It classifies text as either "Fake" or "True" based on its content.
+
+## Inspiration
+
+In light of recent events, there is a high concentration of media and social media being used to spread information to people across the globe and to the people who are directly affected by the conflicts happening. Making sure that people have the right information at the right times, including where a hospital may be located or where a road might be broken to redirect them to the right place, is extremely critical. With the advent of new technology and people promoting false information, creating a tool to benefit and aid these people in distress is something that we all felt was truly something we could dedicate ourselves and this hackathon towards.
+
 
 ## Purpose
 
