@@ -40,6 +40,8 @@ The purpose of this project is to provide a user-friendly and accessible tool fo
 Before running this application, make sure you have the following dependencies installed:
 
 - Python 3.10.12
+- Numpy
+- Pandas
 - Flask
 - PyTorch
 - Transformers (Hugging Face)
