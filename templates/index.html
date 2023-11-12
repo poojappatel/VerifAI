@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <button class="mode-toggle">Toggle Dark/Light Mode</button>
+        <h1>Fake News Detector</h1>
+        <p>Enter a news text to classify:</p>
+        <form method="post" action="/predict">
+            <input type="text" name="text" placeholder="Enter news text" required>
+            <br>
+            <button type="submit" class="predict-button">Predict</button>
+        </form>
+        <div id="prediction">
+            <!-- Prediction result will appear here -->
+        </div>
+        <img src="https://www.usna.edu/Users/cs/nchamber/courses/nlp/f21/labs/lab6/bert.png" alt="BERT Image"
+            class="bert-image">
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
