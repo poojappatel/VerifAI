@@ -4,7 +4,8 @@ This Flask application allows you to perform text classification using a pre-tra
 
 <img width="1469" alt="Screenshot 2023-11-12 at 5 20 32 AM" src="https://github.com/poojappatel/FakeNewsDetector/assets/98544233/1c68a701-8684-4f0e-b3c0-6e7f034098ca">
 
-<img width="1469" alt="Screenshot 2023-11-12 at 5 20 32 AM" src="https://github.com/poojappatel/FakeNewsDetector/assets/98544233/283aaa93-74d2-4e80-969a-85765cef20d9">
+<img width="1470" alt="Screenshot 2023-11-12 at 5 20 47 AM" src="https://github.com/poojappatel/FakeNewsDetector/assets/98544233/f2f720ff-539e-44fa-bcdc-f975b21d0570">
+
 
 
 ## Table of Contents
