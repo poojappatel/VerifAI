@@ -55,4 +55,4 @@ pip install -r requirements.txt
 - This project uses the Hugging Face Transformers library for working with pre-trained BERT models.
 
 ## Authors:
-Emma Azzi, Ananya Shekhawat, Pooja Patel, Ayman Shaikh
+Emma Azzi, Ananya Shekhawat, Pooja Patel, Aymaan Shaikh
