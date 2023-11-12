@@ -83,10 +83,58 @@ input[type="text"] {
 }
 
 .bert-image {
-    width: 100%;
-    /* Adjust the width as needed, or set a max-width */
+    width: 33%;
+    /* Reduced to one-third */
     height: auto;
     display: block;
     margin: 20px auto;
-    /* Centers the image horizontally */
+    /* Keeps the image centered */
+}
+
+
+.CICS-image {
+    width: 17%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    /* Keeps the image centered */
+}
+
+/* Add this to your existing style.css file */
+
+/* Progress Bar Styles */
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    width: 300px;
+}
+
+.progress-done {
+    background: linear-gradient(to left, #F2709C, #FF9472);
+    box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+}
+
+
+.fake-sentence {
+    color: red;
+}
+
+.real-sentence {
+    color: green;
+}
+
+.probability-score {
+    font-weight: bold;
 }

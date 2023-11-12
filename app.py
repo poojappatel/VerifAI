@@ -1,11 +1,15 @@
 from flask import Flask, request, jsonify, render_template
 import torch
-from transformers import BertTokenizer, BertModel
+from transformers import BertTokenizer, BertModel, pipeline
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
 from model import BERT_Arch 
 import requests
-
+from torch.nn.functional import softmax
 
 app = Flask(__name__)
+
 def load_model(model_path):
     bert = BertModel.from_pretrained('bert-base-uncased')
     model = BERT_Arch(bert)  
@@ -38,20 +42,20 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-        # Get text from form input
         text = request.form['text']
-        seq, mask = preprocess(text)
+        sentences = sent_tokenize(text)
+        sentence_results = []
 
-        with torch.no_grad():
-            preds = model(seq, mask)
-            # Convert preds to a tensor
-            preds = torch.tensor(preds) 
+        for sentence in sentences:
+            seq, mask = preprocess(sentence)
+            with torch.no_grad():
+                preds = model(seq, mask)
+                preds = softmax(preds, dim=1)
+                fake_prob = preds[0][1].item() * 100  # Probability of being fake
+                real_prob = preds[0][0].item() * 100 # Probability of being real
+                sentence_results.append((sentence, fake_prob, real_prob))
 
-        prediction = torch.argmax(preds, axis=1)
-        label = 'Fake' if prediction[0] == 1 else 'True'
-
-        # Return the prediction as a string
-        return render_template('index.html', prediction=label)
+        return render_template('index.html', sentence_results=sentence_results)
     return render_template('index.html')
 
 if __name__ == '__main__':

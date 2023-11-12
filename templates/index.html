@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake News Detector</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .fake {
+            color: red;
+        }
+
+        .real {
+            color: green;
+        }
+        /* Add additional styling as needed */
+    </style>
 </head>
 
 <body>
@@ -13,17 +23,33 @@
         <button class="mode-toggle">Toggle Dark/Light Mode</button>
         <h1>Fake News Detector</h1>
         <p>Enter a news text to classify:</p>
+        <p>Fake: RED, Real: GREEN</p>
+        <p><b>% represents likelihood of being fake</b></p>
         <form method="post" action="/predict">
             <input type="text" name="text" placeholder="Enter news text" required>
-            <br>
             <button type="submit" class="predict-button">Predict</button>
         </form>
+
+        <!-- Results display -->
+        {% if sentence_results %}
+        <div class="results">
+            {% for sentence, fake_prob, real_prob in sentence_results %}
+            <p class="{{ 'fake-sentence' if fake_prob > 50 else 'real-sentence' }}">
+                {{ sentence }}
+                <span class="probability-score">({{ 'Fake' if fake_prob > 50 else 'Real' }}: {{ fake_prob|round(2) }}%)</span>
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div id="prediction">
             <!-- Prediction result will appear here -->
         </div>
         <img src="https://www.usna.edu/Users/cs/nchamber/courses/nlp/f21/labs/lab6/bert.png" alt="BERT Image"
             class="bert-image">
+        <p class="authors">Authors: Emma Azzi, Pooja Patel, Ananya Shekhawat, Aymaan Shaikh</p>
     </div>
+    <img src="https://www-edlab.cs.umass.edu/images/logoCS.gif" alt="CICS Image"
+        class="CICS-image">
     <script src="/static/js/script.js"></script>
 </body>
 
